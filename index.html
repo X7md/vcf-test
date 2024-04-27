@@ -9,7 +9,7 @@
      var downloadUrl = URL.createObjectURL(blob);
      var a = document.createElement("a");
      a.href = downloadUrl;
-     a.download = filename+".vcf";
+     //a.download = filename+".vcf";
      document.body.appendChild(a);
      a.click();
 }
