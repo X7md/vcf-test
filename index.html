@@ -1,0 +1,16 @@
+<button onclick="downloadVcf()">
+  Test!
+</button>
+
+<script>
+  function downloadVcf(filename){
+     var vcfString="BEGIN:VCARD\nVERSION:3.0\nREV:2024-04-27T16:58:49.350Z\nN;CHARSET=utf-8:Web Dev\nEMAIL;INTERNET:me@x7md.net\nTEL:+966 534459689\nADR:Makkah, KSA\nEND:VCARD";
+     var blob = new Blob([vcfString], {type: 'text/x-vcard'});
+     var downloadUrl = URL.createObjectURL(blob);
+     var a = document.createElement("a");
+     a.href = downloadUrl;
+     a.download = filename+".vcf";
+     document.body.appendChild(a);
+     a.click();
+}
+</script>
